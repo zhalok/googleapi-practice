@@ -6,9 +6,7 @@ const app = express();
 dotenv.config();
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res, next) => {
-	res.render('datas.ejs');
-});
+app.use('/', express.static('public'));
 
 app.use('/sheet', sheetRoute);
 
