@@ -21,7 +21,7 @@ spreadsheetController.readData = async (req, res, next) => {
 	const readData = await googleSheetsInstance.spreadsheets.values.get({
 		auth, //auth object
 		spreadsheetId, // spreadsheet id
-		range: 'Form Responses 1!A:Z', //range of cells to read from.
+		range: 'Active students!A:Z', //range of cells to read from.
 	});
 
 	const keys = readData.data.values[0];
@@ -34,7 +34,11 @@ spreadsheetController.readData = async (req, res, next) => {
 		}
 		arr.push(cur_obj);
 	}
-	res.json(arr);
+	// res.json(arr);
+
+	res.render('datas.ejs', {
+		data: arr[0]['full name'],
+	});
 };
 
 module.exports = spreadsheetController;
