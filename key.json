@@ -1,0 +1,12 @@
+{
+	"type": "service_account",
+	"project_id": "digital-axon-342512",
+	"private_key_id": "52658d4a270cc016ad57193f175dc5e7dba5ac79",
+	"private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDdYM+f+KrSDKs5\ntyfieAC4jFnrrbzSvQnMaM88R9kWjatXNMqxLzGyj3nhpSfVEg37+tSLqZ0GvI8U\nz2MtbeLvzx/InnIohrvKyIfVPWjrnewUY8qgPkYJ69g12LV0iy3uXuQaJEKh8s8u\nF/L8smWTWdcBkLGbnj1DpceCDdw7l/l/cPuRHI76lqkl6sXGwlWXLFguPAAnXhNy\nWGWwAuxbaBEBBqffKjDCx1sIt78vCn3EFBd8O+EvcUU6bE2aNUeTSwvAd24DmkA9\n1y9VxJod+NAmQqYQuYnw7E16chVMhx364ewf5yrVj65g58T1EU1XtYH1yR5KgWbl\n6eaIRNiPAgMBAAECggEAA/EU2NqbXmNxLs+TNLqnZCla43d7U09F2C9nkAzFN0Vw\n54r8TQ2kvutiFJCsG6/5Kz29yDY/E0EDmPNoQUk0hAXyXW5e7CrskdgIKmw3lj3x\nZpuonpQadNtL6r54VVqjD3bB1nWs4e9gtAAjV5rOoY147jJZ6ZUrRTTRx9o+j7g5\nf9Y7L4jUKUJ+3xKm4gjQwfZDm0khgkUKt1iGG74jvn7VQr2rxRvgAkhbVlC2fOF/\ny8HzcR6ZFg2s19Vr1/mP8uCh/jQcf1wcai1dw1afzqDq84FzEKTKI4ssIc0AowEb\nix/S1Qtj0UJrQhxy8tBR8JGksBUXdCHBIKNr1d02uQKBgQD7FkGQbQcpph6QNzPb\n2rxb/kWXh468R1y/KznYWqFt2zVfOWZ+KRL/0/ZmOR9VYLib6KYIbgWIZH7iEPRt\n6Z0q55CSMTDs9YFpue2t3B0bBg/9ly9LAE1l5O2Q2DQMvbOEEdINPjMn5ud/DXJr\nufcsd2I/1WgNUhpojb7aHJ2ShwKBgQDhtbzjtE4Wzcq+Wej2RrUWe2PA1W/jutjy\nUoa0TJ9CeFQYFgzt2Uukk870n/CO1CmCZS4i0rzs1hWe9gyH8lvMb2mg6QMhArXj\nSTKrhqRVyZ41YA8otvwnsLprMnaW+XAiDq0yX2suUwYzBELRxogczABQagy7TC/E\ntYSCvZajuQKBgFh5di7jDDQT0g81NHPS9q5fwbvsS1Jyvu6p158yCFICfSMJweDQ\nrl4xHVDV7gGSrFpbty2fPxnZd5BHMyoLuJLmt92bsca9l5Veq66osiTUlQvhmwuN\nlrhB26g/Vs/qhHgUI3UBJtt3lLkDTv9AryUfCCLAGwMenCmdUNPgY3G/AoGAOPlm\nH9hgqdLyrZAGhTwd8/nbmU6HOuXsY2a/h/2baezz1UyjoNpsBLQm1osU7wjRHZAq\n0DF/7QyxUnnredmMoJMzB6Ip3whPH3tXpgKLsvf8zp5b1TwzdFVhCTQoyT1Xt9Ea\nmQ+K/5uHghM+RrOlohdAsQvEAPdfS3lCZLo0r0kCgYEA6p/lCJ0y7e+Z+L+1UbBi\nRzH8aYCx8YpCn9Ait69SAJeCXjNQAIYx76m/WzIdhOFyA9WAyPVXTpvpr+SLEqky\npXFCWBK0Mv+ETwWc0BPc0CIOQNzCGLmw4uOoZj5qCkO638w+VxYX6AyGUT6KznAJ\nESKz8NkNky4SvDxWxgEAz/U=\n-----END PRIVATE KEY-----\n",
+	"client_email": "service1@digital-axon-342512.iam.gserviceaccount.com",
+	"client_id": "116258010262323486763",
+	"auth_uri": "https://accounts.google.com/o/oauth2/auth",
+	"token_uri": "https://oauth2.googleapis.com/token",
+	"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+	"client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service1%40digital-axon-342512.iam.gserviceaccount.com"
+}

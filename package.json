@@ -1,0 +1,20 @@
+{
+	"name": "google-sheet-api-integration",
+	"version": "1.0.0",
+	"description": "a project for manipulating google sheets",
+	"main": "index.js",
+	"scripts": {
+		"test": "nodemon index",
+		"start": "node index"
+	},
+	"keywords": [
+		"googlesheetsapi"
+	],
+	"author": "zhalok_rahman",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.17.3",
+		"googleapis": "^95.0.0",
+		"nodemon": "^2.0.15"
+	}
+}
