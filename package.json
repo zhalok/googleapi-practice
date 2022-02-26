@@ -13,6 +13,7 @@
 	"author": "zhalok_rahman",
 	"license": "MIT",
 	"dependencies": {
+		"dotenv": "^16.0.0",
 		"express": "^4.17.3",
 		"googleapis": "^95.0.0",
 		"nodemon": "^2.0.15"

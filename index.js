@@ -1,6 +1,8 @@
 const express = require('express');
 const { google } = require('googleapis');
+const dotenv = require('dotenv');
 const app = express();
+dotenv.config();
 app.set('view engine', 'ejs');
 
 const auth = new google.auth.GoogleAuth({
@@ -15,14 +17,25 @@ app.get('/', async (req, res, next) => {
 		version: 'v4',
 		auth: authClientObject,
 	});
-	const spreadsheetId = '1Tbtn_-g_RNnL1BpEnoBelGnDIwz6t2VVqlHZwFnJthU';
+	const spreadsheetId = process.env.spreadsheetId;
 
 	const readData = await googleSheetsInstance.spreadsheets.values.get({
 		auth, //auth object
 		spreadsheetId, // spreadsheet id
-		range: 'Form Responses 1!A:A', //range of cells to read from.
+		range: 'Form Responses 1!A:Z', //range of cells to read from.
 	});
-	res.json(readData);
+
+	const keys = readData.data.values[0];
+	const arr = [];
+	for (let i = 1; i < readData.data.values.length; i++) {
+		let cur = readData.data.values[i];
+		const cur_obj = {};
+		for (let j = 0; j < cur.length; j++) {
+			cur_obj[keys[j]] = cur[j];
+		}
+		arr.push(cur_obj);
+	}
+	res.json(arr);
 });
 
 app.listen(5000, () => {
