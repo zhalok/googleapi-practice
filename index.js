@@ -3,7 +3,9 @@ const { google } = require('googleapis');
 const dotenv = require('dotenv');
 const sheetRoute = require('./routes/sheet-route');
 const app = express();
+
 dotenv.config();
+app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 app.use('/', express.static('public'));

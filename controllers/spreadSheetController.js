@@ -1,4 +1,5 @@
 const { google } = require('googleapis');
+const utils = require('../utils');
 
 const spreadsheetController = {};
 
@@ -9,6 +10,7 @@ const auth = new google.auth.GoogleAuth({
 });
 
 spreadsheetController.readData = async (req, res, next) => {
+	let { name } = req.query;
 	const authClientObject = await auth.getClient();
 	const googleSheetsInstance = google.sheets({
 		version: 'v4',
@@ -23,6 +25,7 @@ spreadsheetController.readData = async (req, res, next) => {
 		spreadsheetId, // spreadsheet id
 		range: 'Active students!A:Z', //range of cells to read from.
 	});
+	// res.json(readData);
 
 	const keys = readData.data.values[0];
 	const arr = [];
@@ -34,11 +37,31 @@ spreadsheetController.readData = async (req, res, next) => {
 		}
 		arr.push(cur_obj);
 	}
+	// console.log(name);
+	// console.log(arr[0]['full name']);
 	// res.json(arr);
 
-	res.render('datas.ejs', {
-		data: arr[0]['full name'],
-	});
+	// console.log(arr[0]['full name']);
+	// res.json(arr[0]['full name']);
+	const result = [];
+	name = name.trim();
+	// console.log(name);
+	for (let i = 0; i < arr.length; i++) {
+		// console.log(arr[i]['full name']);
+		if (
+			name &&
+			arr[i]['full name'] &&
+			utils.matcher(arr[i]['full name'], name)
+		) {
+			result.push(arr[i]);
+		}
+	}
+	res.json(result);
+	// res.render('error.ejs');
+
+	// res.render('datas.ejs', {
+	// 	data: arr[0]['full name'],
+	// });
 };
 
 module.exports = spreadsheetController;
