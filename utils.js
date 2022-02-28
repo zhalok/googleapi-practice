@@ -17,6 +17,20 @@ utils.matcher = (text1, text2) => {
 	}
 };
 
+utils.sheetDataParse = (sheetData) => {
+	const keys = sheetData.data.values[0];
+	const arr = [];
+	for (let i = 1; i < sheetData.data.values.length; i++) {
+		let cur = sheetData.data.values[i];
+		const cur_obj = {};
+		for (let j = 1; j < cur.length; j++) {
+			cur_obj[keys[j]] = cur[j];
+		}
+		arr.push(cur_obj);
+	}
+	return arr;
+};
+
 module.exports = utils;
 
 // const text1 = 'hello';

@@ -17,26 +17,29 @@ spreadsheetController.readData = async (req, res, next) => {
 		auth: authClientObject,
 	});
 	const { spreadsheetId } = req.params;
-	// console.log(req.params);
-	// console.log(spreadSheetId);
 
 	const readData = await googleSheetsInstance.spreadsheets.values.get({
 		auth, //auth object
 		spreadsheetId, // spreadsheet id
 		range: 'Active students!A:Z', //range of cells to read from.
 	});
+	// console.log(readData);
 	// res.json(readData);
+	// readData.json();
+	// console.log(readData);
+	// const keys = readData.data.values[0];
+	// const arr = [];
+	// for (let i = 1; i < readData.data.values.length; i++) {
+	// 	let cur = readData.data.values[i];
+	// 	const cur_obj = {};
+	// 	for (let j = 1; j < cur.length; j++) {
+	// 		cur_obj[keys[j]] = cur[j];
+	// 	}
+	// 	arr.push(cur_obj);
+	// }
+	const arr = utils.sheetDataParse(readData);
 
-	const keys = readData.data.values[0];
-	const arr = [];
-	for (let i = 1; i < readData.data.values.length; i++) {
-		let cur = readData.data.values[i];
-		const cur_obj = {};
-		for (let j = 1; j < cur.length; j++) {
-			cur_obj[keys[j]] = cur[j];
-		}
-		arr.push(cur_obj);
-	}
+	// res.json(arr);
 	// console.log(name);
 	// console.log(arr[0]['full name']);
 	// res.json(arr);
@@ -45,7 +48,7 @@ spreadsheetController.readData = async (req, res, next) => {
 	// res.json(arr[0]['full name']);
 	const result = [];
 	name = name.trim();
-	// console.log(name);
+	// // console.log(name);
 	for (let i = 0; i < arr.length; i++) {
 		// console.log(arr[i]['full name']);
 		if (
@@ -64,4 +67,23 @@ spreadsheetController.readData = async (req, res, next) => {
 	// });
 };
 
+spreadsheetController.sortData = async (req, res, next) => {
+	const { spreadsheetId } = req.query;
+
+	// res.json('hello');
+	const authClientObject = await auth.getClient();
+	const googleSheetsInstance = google.sheets({
+		version: 'v4',
+		auth: authClientObject,
+	});
+	const readData = await googleSheetsInstance.spreadsheets.values.get({
+		auth, //auth object
+		spreadsheetId, // spreadsheet id
+		range: 'Form Responses 1!A:Z', //range of cells to read from.
+	});
+	const arr = utils.sheetDataParse(readData);
+	arr.map((e) => (e.Group = parseInt(e.Group)));
+	arr.sort((a, b) => a.Group - b.Group);
+	res.json(arr);
+};
 module.exports = spreadsheetController;
